@@ -1,0 +1,34 @@
+@use "../utils/" as u;
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 u.rem(24);
+    background: var(--color-grey-50)
+        url(/assets/images/pattern-background-mobile-light.svg) no-repeat;
+
+    @include u.breakpoint(small) {
+        background: var(--color-grey-50)
+            url(/assets/images/pattern-background-tablet-light.svg) no-repeat;
+    }
+
+    @include u.breakpoint(medium) {
+        background: var(--color-grey-50)
+            url(/assets/images/pattern-background-desktop-light.svg) no-repeat
+            center center fixed;
+        background-size: cover;
+    }
+}
+
+// Utility classes
+
+.hidden {
+    display: none !important;
+}
