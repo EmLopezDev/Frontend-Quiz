@@ -69,13 +69,17 @@
                 </svg>
             </div>
         </header>
-        <main>
-            <section>
-                <div class="start__view">
-                    <h2>Welcome to the Frontend Quiz!</h2>
-                    <p>Pick a subject to get started.</p>
-                </div>
-                <div class="questions__view hidden">
+        <main
+            id="quiz-container"
+            class="quiz__container"
+        >
+            <section class="quiz__title">
+                <h2>
+                    Welcome to the
+                    <span>Frontend Quiz!</span>
+                </h2>
+                <p>Pick a subject to get started.</p>
+                <!-- <div class="questions__view hidden">
                     <h2>
                         <span>Question 6 of 10</span>
                         Which of these color contrast ratios defines the minimum
@@ -88,16 +92,46 @@
                         Quiz completed
                         <span>You Scored...</span>
                     </h2>
-                </div>
+                </div> -->
             </section>
-            <section>
-                <div class="start__view--content">
-                    <button>HTML</button>
-                    <button>CSS</button>
-                    <button>JavaScript</button>
-                    <button>Accessibility</button>
-                </div>
-                <div class="questions__view--content hidden">
+            <section class="quiz__questions">
+                <button>
+                    <span class="html__bg">
+                        <img
+                            src="../assets/images/icon-html.svg"
+                            alt=""
+                        />
+                    </span>
+                    HTML
+                </button>
+                <button>
+                    <span class="css__bg"">
+                        <img
+                            src="../assets/images/icon-css.svg"
+                            alt=""
+                        />
+                    </span>
+                    CSS
+                </button>
+                <button>
+                    <span class="js__bg">
+                        <img
+                            src="../assets/images/icon-js.svg"
+                            alt=""
+                        />
+                    </span>
+                    JavaScript
+                </button>
+                <button>
+                    <span class="accessibility__bg">
+                        <img
+                            src="../assets/images/icon-accessibility.svg"
+                            alt=""
+                        />
+                    </span>
+                    Accessibility
+                </button>
+                <!-- <div class="questions__view--content hidden">
                     <div>
                         <button>Answer 1</button>
                         <button>Answer 2</button>
@@ -120,7 +154,7 @@
                         <span>out of 10</span>
                     </div>
                     <button>Play Again</button>
-                </div>
+                </div> -->
             </section>
         </main>
     </body>

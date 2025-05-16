@@ -1,5 +1,101 @@
 @use "../utils/" as u;
 
-main {
+.quiz__container {
     padding-top: u.rem(32);
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(40);
+    width: 100%;
+
+    @include u.breakpoint(small) {
+        gap: u.rem(64);
+        max-width: u.rem(640);
+    }
+
+    @include u.breakpoint(medium) {
+        flex-direction: row;
+        gap: u.rem(128);
+        max-width: u.rem(1157);
+    }
+}
+
+.quiz__title {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(16);
+    width: 100%;
+
+    @include u.breakpoint(medium) {
+        gap: u.rem(48);
+    }
+
+    & h2 {
+        color: var(--color-blue-900);
+
+        @include u.text-preset-2-light;
+
+        & span {
+            display: block;
+            margin-top: u.rem(8);
+            @include u.text-preset-2-medium;
+        }
+    }
+
+    & p {
+        color: var(--color-grey-500);
+
+        @include u.text-preset-5;
+    }
+}
+
+.quiz__questions {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(16);
+    width: 100%;
+
+    & button {
+        display: flex;
+        align-items: center;
+        gap: u.rem(16);
+        padding: u.rem(16);
+        height: clamp(4.5rem, 3rem + 4vw, 5.5rem);
+        background-color: var(--color-white);
+        border: none;
+        border-radius: u.rem(24);
+        color: var(--color-blue-900);
+        box-shadow: 0 u.rem(16) u.rem(40) 0 hsla(220, 29%, 66%, 14%);
+
+        @include u.text-preset-4;
+
+        & span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: clamp(2.5rem, 1rem + 4vw, 3.5rem);
+            height: clamp(2.5rem, 1rem + 4vw, 3.5rem);
+            border-radius: u.rem(6);
+
+            &.html__bg {
+                background-color: var(--color-orange-50);
+            }
+
+            &.css__bg {
+                background-color: var(--color-green-100);
+            }
+
+            &.js__bg {
+                background-color: var(--color-blue-50);
+            }
+
+            &.accessibility__bg {
+                background-color: var(--color-purple-100);
+            }
+        }
+
+        & img {
+            width: clamp(1.75rem, 0.625rem + 3vw, 2.5rem);
+            height: clamp(1.75rem, 0.625rem + 3vw, 2.5rem);
+        }
+    }
 }

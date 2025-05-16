@@ -3,8 +3,19 @@
 header {
     display: flex;
     align-items: center;
+    width: 100%;
     height: u.rem(56);
     padding: u.rem(16) 0;
+
+    @include u.breakpoint(small) {
+        padding: u.rem(40) 0;
+        max-width: u.rem(640);
+    }
+
+    @include u.breakpoint(medium) {
+        padding: u.rem(80) 0;
+        max-width: u.rem(1157);
+    }
 
     & .header__title {
         display: flex;
@@ -30,8 +41,8 @@ header {
         margin-left: auto;
 
         & svg {
-            width: u.rem(16);
-            height: u.rem(16);
+            width: clamp(1rem, 0.25rem + 2vw, 1.5rem);
+            height: clamp(1rem, 0.25rem + 2vw, 1.5rem);
             fill: var(--color-grey-500);
         }
 
@@ -39,8 +50,8 @@ header {
             appearance: none;
             outline: none;
             position: relative;
-            width: u.rem(32);
-            height: u.rem(20);
+            width: clamp(2rem, 0.5rem + 4vw, 3rem);
+            height: clamp(1.25rem, 0.5rem + 2vw, 1.75rem);
             border-radius: u.rem(20);
             background-color: var(--color-purple-600);
             cursor: pointer;
@@ -50,11 +61,11 @@ header {
                 position: absolute;
                 top: 50%;
                 left: 35%;
-                width: u.rem(14);
-                height: u.rem(14);
+                width: clamp(0.875rem, 0.125rem + 2vw, 1.375rem);
+                height: clamp(0.875rem, 0.125rem + 2vw, 1.375rem);
                 border-radius: 50%;
                 background-color: var(--color-white);
-                transform: translate(-50%, -50%);
+                translate: -50% -50%;
                 transition: left 0.3s;
             }
 
