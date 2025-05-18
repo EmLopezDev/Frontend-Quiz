@@ -30,7 +30,7 @@
     }
 
     & h2 {
-        color: var(--color-blue-900);
+        color: var(--text-color-primary);
 
         @include u.text-preset-2-light;
 
@@ -42,7 +42,7 @@
     }
 
     & p {
-        color: var(--color-grey-500);
+        color: var(--text-color-secondary);
 
         @include u.text-preset-5;
     }
@@ -60,11 +60,11 @@
         gap: u.rem(16);
         padding: u.rem(16);
         height: clamp(4.5rem, 3rem + 4vw, 5.5rem);
-        background-color: var(--color-white);
+        background-color: var(--base-secondary-bg-color);
         border: none;
-        border-radius: u.rem(24);
-        color: var(--color-blue-900);
-        box-shadow: 0 u.rem(16) u.rem(40) 0 hsla(220, 29%, 66%, 14%);
+        border-radius: u.rem(12);
+        color: var(--text-color-primary);
+        box-shadow: 0 u.rem(16) u.rem(40) 0 va(--box-shadow-color);
 
         @include u.text-preset-4;
 

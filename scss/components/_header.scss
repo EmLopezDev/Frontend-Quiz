@@ -13,7 +13,7 @@ header {
     }
 
     @include u.breakpoint(medium) {
-        padding: u.rem(80) 0;
+        padding: u.rem(90) 0;
         max-width: u.rem(1157);
     }
 
@@ -43,7 +43,7 @@ header {
         & svg {
             width: clamp(1rem, 0.25rem + 2vw, 1.5rem);
             height: clamp(1rem, 0.25rem + 2vw, 1.5rem);
-            fill: var(--color-grey-500);
+            fill: var(--svg-color);
         }
 
         & input {

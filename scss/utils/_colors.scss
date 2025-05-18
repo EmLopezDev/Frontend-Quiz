@@ -17,4 +17,34 @@
     --color-orange-50: hsl(27, 100%, 96%);
     --color-orange-400: hsl(22, 100%, 60%);
     --color-red-500: hsl(0, 82%, 63%);
+
+    --base-bg-mobile-image: url(../assets/images/pattern-background-mobile-light.svg);
+    --base-bg-tablet-image: url(../assets/images/pattern-background-tablet-light.svg);
+    --base-bg-desktop-image: url(../assets/images/pattern-background-desktop-light.svg);
+
+    --base-primary-bg-color: var(--color-grey-50);
+    --base-secondary-bg-color: var(--color-white);
+
+    --svg-color: var(--color-grey-500);
+
+    --box-shadow-color: hsla(220, 29%, 66%, 14%);
+
+    --text-color-primary: var(--color-blue-900);
+    --text-color-secondary: var(--color-grey-500);
+}
+
+.darkmode {
+    --base-bg-mobile-image: url(../assets/images/pattern-background-mobile-dark.svg);
+    --base-bg-tablet-image: url(../assets/images/pattern-background-tablet-dark.svg);
+    --base-bg-desktop-image: url(../assets/images/pattern-background-desktop-dark.svg);
+
+    --base-primary-bg-color: var(--color-blue-900);
+    --base-secondary-bg-color: var(--color-blue-850);
+
+    --svg-color: var(--color-white);
+
+    --box-shadow-color: hsla(216, 25%, 25%, 14%);
+
+    --text-color-primary: var(--color-white);
+    --text-color-secondary: var(--color-blue-300);
 }

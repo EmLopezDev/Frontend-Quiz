@@ -14,19 +14,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--color-grey-50)
-        url(/assets/images/pattern-background-mobile-light.svg) no-repeat;
+    background: var(--base-primary-bg-color) var(--base-bg-mobile-image)
+        no-repeat;
 
     @include u.breakpoint(small) {
-        background: var(--color-grey-50)
-            url(/assets/images/pattern-background-tablet-light.svg) no-repeat;
+        background: var(--base-primary-bg-color) var(--base-bg-tablet-image)
+            no-repeat;
     }
 
     @include u.breakpoint(medium) {
-        background: var(--color-grey-50)
-            url(/assets/images/pattern-background-desktop-light.svg) no-repeat
-            center center fixed;
+        background: var(--base-primary-bg-color) var(--base-bg-desktop-image)
+            no-repeat center center fixed;
         background-size: cover;
+        padding: 0 u.rem(32);
     }
 }
 
