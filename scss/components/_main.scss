@@ -91,11 +91,11 @@
             &.accessibility__bg {
                 background-color: var(--color-purple-100);
             }
-        }
 
-        & img {
-            width: clamp(1.75rem, 0.625rem + 3vw, 2.5rem);
-            height: clamp(1.75rem, 0.625rem + 3vw, 2.5rem);
+            & img {
+                width: clamp(1.75rem, 0.625rem + 3vw, 2.5rem);
+                height: clamp(1.75rem, 0.625rem + 3vw, 2.5rem);
+            }
         }
     }
 }
