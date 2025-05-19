@@ -39,7 +39,10 @@
     </head>
     <body id="body">
         <header>
-            <div class="header__title hidden">
+            <div
+                id="header-title"
+                class="header__title hidden"
+            >
                 <img
                     src="./assets/images/icon-html.svg"
                     alt=""
@@ -77,7 +80,10 @@
             id="quiz-container"
             class="quiz__container"
         >
-            <section class="quiz__title">
+            <section
+                id="quiz-title"
+                class="start__view--title"
+            >
                 <h2>
                     Welcome to the
                     <span>Frontend Quiz!</span>
@@ -98,8 +104,14 @@
                     </h2>
                 </div> -->
             </section>
-            <section class="quiz__questions">
-                <button>
+            <section
+                id="quiz-content"
+                class="start__view--content"
+            >
+                <button
+                    id="html"
+                    value="html"
+                >
                     <span class="html__bg">
                         <img
                             src="assets/images/icon-html.svg"
@@ -108,7 +120,10 @@
                     </span>
                     HTML
                 </button>
-                <button>
+                <button
+                    id="css"
+                    value="css"
+                >
                     <span class="css__bg">
                         <img
                             src="assets/images/icon-css.svg"
@@ -117,7 +132,10 @@
                     </span>
                     CSS
                 </button>
-                <button>
+                <button
+                    id="js"
+                    value="js"
+                >
                     <span class="js__bg">
                         <img
                             src="assets/images/icon-js.svg"
@@ -126,7 +144,10 @@
                     </span>
                     JavaScript
                 </button>
-                <button>
+                <button
+                    id="accessibility"
+                    value="accessibility"
+                >
                     <span class="accessibility__bg">
                         <img
                             src="assets/images/icon-accessibility.svg"

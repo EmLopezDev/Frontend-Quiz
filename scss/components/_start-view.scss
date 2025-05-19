@@ -1,30 +1,6 @@
 @use "../utils/" as u;
 
-.quiz__container {
-    padding-top: u.rem(32);
-    display: flex;
-    flex-direction: column;
-    gap: u.rem(40);
-    width: 100%;
-
-    @include u.breakpoint(small) {
-        gap: u.rem(64);
-        max-width: u.rem(640);
-    }
-
-    @include u.breakpoint(medium) {
-        flex-direction: row;
-        gap: u.rem(100);
-        max-width: u.rem(1100);
-    }
-}
-
-.quiz__title {
-    display: flex;
-    flex-direction: column;
-    gap: u.rem(16);
-    width: 100%;
-
+.start__view--title {
     @include u.breakpoint(medium) {
         gap: u.rem(48);
     }
@@ -48,12 +24,7 @@
     }
 }
 
-.quiz__questions {
-    display: flex;
-    flex-direction: column;
-    gap: u.rem(16);
-    width: 100%;
-
+.start__view--content {
     & button {
         display: flex;
         align-items: center;

@@ -30,6 +30,32 @@ body {
     }
 }
 
+main {
+    padding-top: u.rem(32);
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(40);
+    width: 100%;
+
+    @include u.breakpoint(small) {
+        gap: u.rem(64);
+        max-width: u.rem(640);
+    }
+
+    @include u.breakpoint(medium) {
+        flex-direction: row;
+        gap: u.rem(100);
+        max-width: u.rem(1100);
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(16);
+    width: 100%;
+}
+
 // Utility classes
 
 .hidden {
