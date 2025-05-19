@@ -1,6 +1,10 @@
 @use "../utils/" as u;
 
 .start__view--title {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(16);
+
     @include u.breakpoint(medium) {
         gap: u.rem(48);
     }
@@ -25,7 +29,10 @@
 }
 
 .start__view--content {
+    display: flex;
+    flex-direction: column;
     gap: u.rem(16);
+
     & button {
         & span {
             &.html__bg {

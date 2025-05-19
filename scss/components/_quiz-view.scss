@@ -1,6 +1,8 @@
 @use "../utils/" as u;
 
 .question__view--title {
+    display: flex;
+    flex-direction: column;
     gap: u.rem(24);
 
     @include u.breakpoint(small) {
@@ -42,16 +44,23 @@
 }
 
 .question__view--content {
+    display: flex;
+    flex-direction: column;
     gap: u.rem(16);
 
     @include u.breakpoint(small) {
         padding-bottom: u.rem(40);
         gap: u.rem(32);
     }
+
     &-answers {
         display: flex;
         flex-direction: column;
         gap: u.rem(16);
+
+        & img {
+            margin-left: auto;
+        }
 
         & .answer__letter {
             color: var(--color-grey-500);

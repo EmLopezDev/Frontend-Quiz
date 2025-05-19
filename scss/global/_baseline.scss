@@ -29,6 +29,9 @@ body {
         padding: 0 u.rem(32);
     }
 }
+section {
+    width: 100%;
+}
 
 main {
     padding-top: u.rem(32);
@@ -47,12 +50,6 @@ main {
         gap: u.rem(100);
         max-width: u.rem(1100);
     }
-}
-
-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 }
 
 button {
@@ -80,7 +77,6 @@ button {
     }
 
     & img {
-        margin-left: auto;
         width: clamp(1.5rem, 1.05rem + 1.2vw, 1.875rem);
         height: clamp(1.5rem, 1.05rem + 1.2vw, 1.875rem);
     }
