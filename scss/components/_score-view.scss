@@ -1,0 +1,65 @@
+@use "../utils/" as u;
+
+.score__view--title {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        color: var(--text-color-primary);
+        @include u.text-preset-2-light;
+
+        & span {
+            display: block;
+            margin-top: u.rem(8);
+
+            @include u.text-preset-2-medium;
+        }
+    }
+}
+
+.score__view--content {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(16);
+
+    @include u.breakpoint(small) {
+        gap: u.rem(32);
+    }
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--base-secondary-bg-color);
+        padding: u.rem(32);
+        border-radius: u.rem(12);
+
+        & h3 {
+            display: flex;
+            align-items: center;
+            gap: u.rem(16);
+            color: var(--text-color-primary);
+            margin-bottom: u.rem(16);
+
+            @include u.text-preset-4;
+
+            @include u.breakpoint(small) {
+                margin-bottom: u.rem(40);
+            }
+        }
+
+        & .score {
+            color: var(--text-color-primary);
+            margin-bottom: u.rem(16);
+
+            @include u.text-preset-1;
+        }
+
+        & .out-of {
+            color: var(--text-color-secondary);
+            margin-bottom: u.rem(16);
+
+            @include u.text-preset-4;
+        }
+    }
+}

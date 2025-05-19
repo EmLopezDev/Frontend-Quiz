@@ -67,20 +67,6 @@ button {
 
     @include u.text-preset-4;
 
-    & span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: clamp(2.5rem, 1rem + 4vw, 3.5rem);
-        height: clamp(2.5rem, 1rem + 4vw, 3.5rem);
-        border-radius: u.rem(6);
-    }
-
-    & img {
-        width: clamp(1.5rem, 1.05rem + 1.2vw, 1.875rem);
-        height: clamp(1.5rem, 1.05rem + 1.2vw, 1.875rem);
-    }
-
     &.correct {
         border: u.rem(3) solid var(--color-green-500);
     }
@@ -94,11 +80,42 @@ button.submit__button {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--color-white);
     background-color: var(--color-purple-600);
 
     &:disabled {
         cursor: not-allowed;
         opacity: 50%;
+    }
+}
+
+span.icon__bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(2.5rem, 1rem + 4vw, 3rem);
+    height: clamp(2.5rem, 1rem + 4vw, 3rem);
+    border-radius: u.rem(6);
+
+    & img {
+        width: clamp(1.5rem, 1.05rem + 1.2vw, 2rem);
+        height: clamp(1.5rem, 1.05rem + 1.2vw, 2rem);
+    }
+
+    &.html__bg {
+        background-color: var(--color-orange-50);
+    }
+
+    &.css__bg {
+        background-color: var(--color-green-100);
+    }
+
+    &.js__bg {
+        background-color: var(--color-blue-50);
+    }
+
+    &.accessibility__bg {
+        background-color: var(--color-purple-100);
     }
 }
 

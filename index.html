@@ -81,13 +81,13 @@
             class="quiz__container"
         >
             <section id="quiz-title">
-                <div class="start__view--title">
+                <!-- <div class="start__view--title">
                     <h2>
                         Welcome to the
                         <span>Frontend Quiz!</span>
                     </h2>
                     <p>Pick a subject to get started.</p>
-                </div>
+                </div> -->
 
                 <!-- <div class="question__view--title">
                     <h2>
@@ -103,15 +103,15 @@
                     </div>
                 </div> -->
 
-                <!--  <div class="score__view hidden">
+                <div class="score__view--title">
                     <h2>
                         Quiz completed
                         <span>You Scored...</span>
                     </h2>
-                </div> -->
+                </div>
             </section>
             <section id="quiz-content">
-                <div class="start__view--content">
+                <!-- <div class="start__view--content">
                     <button
                         id="html"
                         value="html"
@@ -160,7 +160,7 @@
                         </span>
                         Accessibility
                     </button>
-                </div>
+                </div> -->
 
                 <!-- <div class="question__view--content">
                     <div class="question__view--content-answers">
@@ -200,20 +200,27 @@
                     </span>
                 </div> -->
 
-                <!-- <div class="score__view--content hidden">
-                    <div>
+                <div class="score__view--content">
+                    <div class="score__view--content-card">
                         <h3>
-                            <img
-                                src="./assets/images/icon-html.svg"
-                                alt=""
-                            />
+                            <span class="icon__bg html__bg">
+                                <img
+                                    src="./assets/images/icon-html.svg"
+                                    alt=""
+                                />
+                            </span>
                             HTML
                         </h3>
-                        <span>8</span>
-                        <span>out of 10</span>
+                        <span class="score">8</span>
+                        <span class="out-of">out of 10</span>
                     </div>
-                    <button>Play Again</button>
-                </div> -->
+                    <button
+                        id="play-again-button"
+                        class="submit__button"
+                    >
+                        Play Again
+                    </button>
+                </div>
             </section>
         </main>
     </body>

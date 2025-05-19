@@ -32,29 +32,4 @@
     display: flex;
     flex-direction: column;
     gap: u.rem(16);
-
-    & button {
-        & span {
-            &.html__bg {
-                background-color: var(--color-orange-50);
-            }
-
-            &.css__bg {
-                background-color: var(--color-green-100);
-            }
-
-            &.js__bg {
-                background-color: var(--color-blue-50);
-            }
-
-            &.accessibility__bg {
-                background-color: var(--color-purple-100);
-            }
-
-            & img {
-                width: clamp(1.75rem, 0.625rem + 3vw, 2.5rem);
-                height: clamp(1.75rem, 0.625rem + 3vw, 2.5rem);
-            }
-        }
-    }
 }
