@@ -16,7 +16,9 @@ const disableDarkmode = () => {
 
 if (darkmode === "active") enableDarkmode();
 
-themeCheckbox.addEventListener("input", () => {
+const setTheme = () => {
     darkmode = localStorage.getItem("darkmode");
     darkmode !== "active" ? enableDarkmode() : disableDarkmode();
-});
+};
+
+export default setTheme;

@@ -8,13 +8,13 @@ header {
     padding: u.rem(16) 0;
 
     @include u.breakpoint(small) {
-        padding: u.rem(40) 0;
+        padding: u.rem(60) 0 u.rem(40) 0;
         max-width: u.rem(640);
     }
 
     @include u.breakpoint(medium) {
         padding: u.rem(90) 0;
-        max-width: u.rem(1157);
+        max-width: u.rem(1100);
     }
 
     & .header__title {
@@ -28,7 +28,7 @@ header {
         }
 
         & h1 {
-            color: var(--color-blue-900);
+            color: var(--text-color-primary);
 
             @include u.text-preset-4;
         }
