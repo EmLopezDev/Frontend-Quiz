@@ -14,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: u.rem(16);
     background: var(--base-primary-bg-color) var(--base-bg-mobile-image)
         no-repeat;
 
@@ -34,7 +35,6 @@ section {
 }
 
 main {
-    padding-top: u.rem(32);
     display: flex;
     flex-direction: column;
     gap: u.rem(40);
@@ -98,8 +98,8 @@ span.icon__bg {
     border-radius: u.rem(6);
 
     & img {
-        width: clamp(1.5rem, 1.05rem + 1.2vw, 2rem);
-        height: clamp(1.5rem, 1.05rem + 1.2vw, 2rem);
+        width: clamp(1.8rem, 1.05rem + 1.2vw, 2.5rem);
+        height: clamp(1.8rem, 1.05rem + 1.2vw, 2.5rem);
     }
 
     &.html__bg {

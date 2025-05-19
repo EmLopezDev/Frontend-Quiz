@@ -4,11 +4,10 @@ header {
     display: flex;
     align-items: center;
     width: 100%;
-    height: u.rem(56);
     padding: u.rem(16) 0;
 
     @include u.breakpoint(small) {
-        padding: u.rem(60) 0 u.rem(40) 0;
+        padding: u.rem(40) 0;
         max-width: u.rem(640);
     }
 
@@ -22,11 +21,6 @@ header {
         align-items: center;
         gap: u.rem(16);
 
-        & img {
-            width: clamp(2.5rem, 1rem + 4vw, 3.5rem);
-            height: clamp(2.5rem, 1rem + 4vh, 3.5rem);
-        }
-
         & h1 {
             color: var(--text-color-primary);
 
@@ -37,6 +31,7 @@ header {
     & .header__theme {
         display: flex;
         align-items: center;
+        min-height: u.rem(56);
         gap: u.rem(8);
         margin-left: auto;
 
