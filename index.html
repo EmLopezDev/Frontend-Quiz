@@ -41,7 +41,7 @@
         <header>
             <div
                 id="header-title"
-                class="header__title hidden"
+                class="header__title"
             >
                 <img
                     src="./assets/images/icon-html.svg"
@@ -82,22 +82,27 @@
         >
             <section
                 id="quiz-title"
-                class="start__view--title"
+                class="question__view--title"
             >
-                <h2>
+                <!-- <h2>
                     Welcome to the
                     <span>Frontend Quiz!</span>
                 </h2>
-                <p>Pick a subject to get started.</p>
-                <!-- <div class="questions__view hidden">
-                    <h2>
-                        <span>Question 6 of 10</span>
-                        Which of these color contrast ratios defines the minimum
-                        WCAG 2.1 Level AA requirement for normal text?
-                    </h2>
-                    <div>PROGRESS BAR GOES HERE!!</div>
+                <p>Pick a subject to get started.</p> -->
+
+                <h2>
+                    <span>Question 6 of 10</span>
+                    Which of these color contrast ratios defines the minimum
+                    WCAG 2.1 Level AA requirement for normal text?
+                </h2>
+                <div class="question__view--title-progress-container">
+                    <div
+                        id="progress-bar"
+                        class="question__view--title-progress-bar"
+                    ></div>
                 </div>
-                <div class="score__view hidden">
+
+                <!--  <div class="score__view hidden">
                     <h2>
                         Quiz completed
                         <span>You Scored...</span>
@@ -106,9 +111,9 @@
             </section>
             <section
                 id="quiz-content"
-                class="start__view--content"
+                class="question__view--content"
             >
-                <button
+                <!-- <button
                     id="html"
                     value="html"
                 >
@@ -155,18 +160,45 @@
                         />
                     </span>
                     Accessibility
-                </button>
-                <!-- <div class="questions__view--content hidden">
-                    <div>
-                        <button>Answer 1</button>
-                        <button>Answer 2</button>
-                        <button>Answer 3</button>
-                        <button>Answer 4</button>
-                    </div>
-                    <button>Submit Answer</button>
-                    <span>ERROR MESSAGE!!!</span>
+                </button> -->
+
+                <div class="question__view--content-answers">
+                    <button>
+                        <span class="answer__letter">A</span>
+                        Answer 1
+                    </button>
+                    <button>
+                        <span class="answer__letter">B</span>
+                        Answer 2
+                    </button>
+                    <button>
+                        <span class="answer__letter">C</span>
+                        Answer 3
+                    </button>
+                    <button>
+                        <span class="answer__letter">D</span>
+                        Answer 4
+                    </button>
                 </div>
-                <div class="score__view--content hidden">
+                <button
+                    id="submit-button"
+                    class="submit__button"
+                    disabled
+                >
+                    Submit Answer
+                </button>
+                <span
+                    id="error-message"
+                    class="error__message hidden"
+                >
+                    <img
+                        src="assets/images/icon-error.svg"
+                        alt=""
+                    />
+                    Please select an answer
+                </span>
+
+                <!-- <div class="score__view--content hidden">
                     <div>
                         <h3>
                             <img

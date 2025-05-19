@@ -1,0 +1,92 @@
+@use "../utils/" as u;
+
+.question__view--title {
+    gap: u.rem(24);
+
+    @include u.breakpoint(small) {
+        gap: u.rem(40);
+    }
+
+    @include u.breakpoint(medium) {
+        gap: u.rem(164);
+    }
+
+    & h2 {
+        color: var(--text-color-primary);
+
+        @include u.text-preset-3;
+
+        & span {
+            display: block;
+            color: var(--text-color-secondary);
+            margin-bottom: u.rem(16);
+
+            @include u.text-preset-5;
+        }
+    }
+
+    &-progress-container {
+        height: u.rem(16);
+        width: 100%;
+        background-color: var(--base-secondary-bg-color);
+        border-radius: u.rem(25);
+        padding: u.rem(4);
+    }
+
+    &-progress-bar {
+        height: u.rem(8);
+        width: 0;
+        background-color: var(--color-purple-600);
+        border-radius: u.rem(25);
+    }
+}
+
+.question__view--content {
+    gap: u.rem(16);
+
+    @include u.breakpoint(small) {
+        padding-bottom: u.rem(40);
+        gap: u.rem(32);
+    }
+    &-answers {
+        display: flex;
+        flex-direction: column;
+        gap: u.rem(16);
+
+        & .answer__letter {
+            color: var(--color-grey-500);
+            background-color: var(--color-grey-50);
+
+            @include u.text-preset-4;
+
+            &.correct {
+                color: var(--color-white);
+                background-color: var(--color-green-500);
+            }
+
+            &.incorrect {
+                color: var(--color-white);
+                background-color: var(--color-red-500);
+            }
+        }
+    }
+
+    & .error__message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: u.rem(8);
+        color: var(--color-red-500);
+
+        @include u.text-preset-4;
+
+        @include u.breakpoint(small) {
+            @include u.text-preset-5;
+        }
+
+        & img {
+            width: clamp(1.5rem, 1.05rem + 1.2vw, 1.875rem);
+            height: clamp(1.5rem, 1.05rem + 1.2vw, 1.875rem);
+        }
+    }
+}
