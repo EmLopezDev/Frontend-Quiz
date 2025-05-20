@@ -62,7 +62,7 @@ $letter-spacing: 0;
 @mixin text-preset-4 {
     font-family: var(--font-family), sans-serif;
     font-size: 1.125rem;
-    font-size: clamp(1.125rem, 0.1875rem + 2.5vw, 1.75rem);
+    font-size: clamp(1.125rem, 0.1875rem + 2.5vw, 1.7rem);
     font-weight: $font-weight-medium;
     line-height: $line-height-100;
     letter-spacing: $letter-spacing;

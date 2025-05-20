@@ -55,6 +55,7 @@ main {
 button {
     display: flex;
     align-items: center;
+    text-align: left;
     gap: u.rem(16);
     padding: u.rem(16);
     height: clamp(4.5rem, 3rem + 4vw, 5.5rem);
@@ -67,12 +68,8 @@ button {
 
     @include u.text-preset-4;
 
-    &.correct {
-        border: u.rem(3) solid var(--color-green-500);
-    }
-
-    &.incorrect {
-        border: u.rem(3) solid var(--color-red-500);
+    &:hover {
+        border: u.rem(3) solid var(--color-purple-600);
     }
 }
 
@@ -93,9 +90,16 @@ span.icon__bg {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: clamp(2.5rem, 1rem + 4vw, 3rem);
-    height: clamp(2.5rem, 1rem + 4vw, 3rem);
+    width: clamp(2.5rem, 1rem + 3vw, 2.6rem);
+    height: clamp(2.5rem, 1rem + 3vw, 2.6rem);
+    min-width: u.rem(40);
+    min-height: u.rem(40);
     border-radius: u.rem(6);
+
+    @include u.breakpoint(small) {
+        min-width: u.rem(44);
+        min-height: u.rem(44);
+    }
 
     & img {
         width: clamp(1.8rem, 1.05rem + 1.2vw, 2.5rem);

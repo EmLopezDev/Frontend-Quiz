@@ -67,13 +67,30 @@
             background-color: var(--color-grey-50);
 
             @include u.text-preset-4;
+        }
 
-            &.correct {
+        & .selected {
+            border: u.rem(3) solid var(--color-purple-600);
+
+            & .answer__letter {
+                color: var(--color-white);
+                background-color: var(--color-purple-600);
+            }
+        }
+
+        & .correct {
+            border: u.rem(3) solid var(--color-green-500);
+
+            & .answer__letter {
                 color: var(--color-white);
                 background-color: var(--color-green-500);
             }
+        }
 
-            &.incorrect {
+        & .incorrect {
+            border: u.rem(3) solid var(--color-red-500);
+
+            & .answer__letter {
                 color: var(--color-white);
                 background-color: var(--color-red-500);
             }
