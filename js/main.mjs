@@ -39,6 +39,12 @@ document.addEventListener("input", (e) => {
     }
 });
 
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && e.target.matches("#theme")) {
+        setTheme();
+    }
+});
+
 allButtons.forEach((button) => {
     button.addEventListener("click", getQuiz);
 });

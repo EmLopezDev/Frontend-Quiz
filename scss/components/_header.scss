@@ -67,6 +67,10 @@ header {
             &:checked::after {
                 left: 65%;
             }
+
+            &:focus {
+                border: 2px solid var(--theme-input-focus);
+            }
         }
     }
 }

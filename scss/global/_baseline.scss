@@ -70,6 +70,21 @@ button {
 
     &:hover {
         border: u.rem(3) solid var(--color-purple-600);
+
+        & .answer__letter {
+            color: var(--color-white);
+            background-color: var(--color-purple-600);
+        }
+    }
+
+    &:focus {
+        outline: none;
+        border: u.rem(3) solid var(--color-purple-600);
+
+        & .answer__letter {
+            color: var(--color-white);
+            background-color: var(--color-purple-600);
+        }
     }
 }
 

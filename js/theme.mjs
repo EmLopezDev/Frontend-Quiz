@@ -10,6 +10,7 @@ const enableDarkmode = () => {
 };
 
 const disableDarkmode = () => {
+    themeCheckbox.removeAttribute("checked");
     bodyTag.classList.remove("darkmode");
     localStorage.setItem("darkmode", null);
 };
