@@ -27,26 +27,42 @@ const quizHeader = (icon, title) => {
     quizHeaderEl.prepend(div);
 };
 
+const quizTitle = (question, questionNumber, total) => {
+    const questionTitleDiv = document.createElement("div");
+    const questionTitleH2 = document.createElement("h2");
+    const questionTitleSpan = document.createElement("span");
+    const progressBarContainer = document.createElement("div");
+    const progressBar = document.createElement("div");
+
+    questionTitleSpan.innerText = `Question ${questionNumber} of ${total}`;
+    questionTitleH2.innerText = `${question}`;
+    progressBar.setAttribute("id", "progress-bar");
+    progressBar.className = "question__view--title-progress-bar";
+    progressBarContainer.className = "question__view--title-progress-container";
+    questionTitleDiv.className = "question__view--title";
+
+    questionTitleH2.prepend(questionTitleSpan);
+    progressBarContainer.appendChild(progressBar);
+
+    questionTitleDiv.appendChild(questionTitleH2);
+    questionTitleDiv.appendChild(progressBarContainer);
+
+    quizTitleEL.appendChild(questionTitleDiv);
+
+    const progress = (currentQuestionIdx / questions.length) * 100;
+    progressBar.style.width = `${progress}%`;
+};
+
 const quizContent = (questions) => {
-    const currentQuestion = questions[0];
-    quizTitleEL.innerHTML = `
-        <div class="question__view--title">
-            <h2>
-                <span>Question 1 of ${questions.length}</span>
-                ${currentQuestion.question}
-            </h2>
-            <div class="question__view--title-progress-container">
-                <span
-                    id="progress-bar"
-                    class="question__view--title-progress-bar"
-                ></span>
-            </div>
-        </div>
-    `;
+    const currentQuestionIdx = 1;
+    const currentQuestion = questions[currentQuestionIdx].question;
+    const currentQuestionOptions = questions[currentQuestionIdx].options;
+    const totalQuestions = questions.length;
+    quizTitle(currentQuestion, currentQuestionIdx, totalQuestions);
     quizContentEl.innerHTML = `
         <div class="question__view--content">
             <div class="question__view--content-answers">
-            ${currentQuestion.options
+            ${currentQuestionOptions
                 .map(
                     (option, idx) => `
                     <button id=${optionLetters[idx]} class="answer-buttons">
