@@ -49,8 +49,56 @@ const quizTitle = (question, questionNumber, total) => {
 
     quizTitleEL.appendChild(questionTitleDiv);
 
-    const progress = (currentQuestionIdx / questions.length) * 100;
+    const progress = (questionNumber / total) * 100;
     progressBar.style.width = `${progress}%`;
+};
+
+const quizQuestions = (options) => {
+    const quizQuestionsContainer = document.createElement("div");
+    const quizQuestionsAnswers = document.createElement("div");
+
+    quizQuestionsContainer.className = "question__view--content";
+    quizQuestionsAnswers.className = "question__view--content-answers";
+
+    quizQuestionsContainer.appendChild(quizQuestionsAnswers);
+
+    quizContentEl.appendChild(quizQuestionsContainer);
+
+    options.map((option, idx) => {
+        const button = document.createElement("button");
+        const span = document.createElement("span");
+
+        span.className = "icon__bg answer__letter";
+        span.innerText = `${optionLetters[idx]}`;
+
+        button.className = "answer-buttons";
+        button.innerText = `${option}`;
+
+        button.prepend(span);
+        quizQuestionsAnswers.appendChild(button);
+    });
+
+    // quizContentEl.innerHTML = `
+    //     <div class="question__view--content">
+    //         <button
+    //             id="submit-button"
+    //             class="submit__button"
+    //             disabled
+    //         >
+    //             Submit Answer
+    //         </button>
+    //         <span
+    //             id="error-message"
+    //             class="error__message hidden"
+    //         >
+    //             <img
+    //                 src="assets/images/icon-error.svg"
+    //                 alt=""
+    //             />
+    //             Please select an answer
+    //         </span>
+    //     </div>
+    // `;
 };
 
 const quizContent = (questions) => {
@@ -59,38 +107,7 @@ const quizContent = (questions) => {
     const currentQuestionOptions = questions[currentQuestionIdx].options;
     const totalQuestions = questions.length;
     quizTitle(currentQuestion, currentQuestionIdx, totalQuestions);
-    quizContentEl.innerHTML = `
-        <div class="question__view--content">
-            <div class="question__view--content-answers">
-            ${currentQuestionOptions
-                .map(
-                    (option, idx) => `
-                    <button id=${optionLetters[idx]} class="answer-buttons">
-                    <span class="icon__bg answer__letter">${optionLetters[idx]}</span>
-                    ${option}
-                    </button>`
-                )
-                .join("")}
-            </div>
-            <button
-                id="submit-button"
-                class="submit__button"
-                disabled
-            >
-                Submit Answer
-            </button>
-            <span
-                id="error-message"
-                class="error__message hidden"
-            >
-                <img
-                    src="assets/images/icon-error.svg"
-                    alt=""
-                />
-                Please select an answer
-            </span>
-        </div>
-    `;
+    quizQuestions(currentQuestionOptions);
 };
 
 const showQuiz = (quizObj) => {
