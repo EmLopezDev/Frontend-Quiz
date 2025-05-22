@@ -21,7 +21,7 @@ const showHideStartView = (boolean) => {
 
 const getQuiz = (evt) => {
     const value = evt.currentTarget.value;
-    fetch("../data.json")
+    fetch("data.json")
         .then((res) => res.json())
         .then(({ quizzes }) => {
             showHideStartView(true);
