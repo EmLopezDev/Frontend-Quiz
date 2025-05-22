@@ -39,6 +39,7 @@ main {
     flex-direction: column;
     gap: u.rem(40);
     width: 100%;
+    padding-bottom: u.rem(16);
 
     @include u.breakpoint(small) {
         gap: u.rem(64);

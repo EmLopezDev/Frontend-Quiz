@@ -77,7 +77,6 @@ const quizHeader = (icon, title) => {
     const h1 = document.createElement("h1");
 
     h1.innerText = `${title}`;
-    console.log(icon);
     img.setAttribute("src", `${icon}`);
     img.setAttribute("alt", "");
 
@@ -115,7 +114,7 @@ const quizTitle = (question, questionNumber, total) => {
 
     quizTitleEL.appendChild(questionTitleDiv);
 
-    const progress = (questionNumber / total) * 100;
+    const progress = ((questionNumber + 1) / total) * 100;
     progressBar.style.width = `${progress}%`;
 };
 
@@ -168,7 +167,6 @@ const quizContent = () => {
 nextButton.addEventListener("click", () => {
     currentQuestionIdx++;
     currentUserAnswer = "";
-    console.log(currentUserAnswer);
     quizContent();
 });
 
