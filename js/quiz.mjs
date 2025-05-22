@@ -6,11 +6,21 @@ const quizQuestionsContainer = document.createElement("div");
 const quizQuestionsAnswers = document.createElement("div");
 
 const submitButton = document.createElement("button");
+const nextButton = document.createElement("button");
 
 const optionLetters = ["A", "B", "C", "D"];
 
+let allQuestions = [];
+
 let currentQuestionIdx = 0;
 let currentUserAnswer = "";
+
+let numberOfCorrect = 0;
+
+const removePreviousContent = () => {
+    quizTitleEL.innerHTML = "";
+    quizQuestionsAnswers.innerHTML = "";
+};
 
 const selectedAnswer = (selected) => {
     const answerButtons = document.querySelectorAll(".answer-buttons");
@@ -28,6 +38,36 @@ const setUserAnswer = (evt) => {
     currentUserAnswer = evt.currentTarget.value;
     submitButton.removeAttribute("disabled");
     selectedAnswer(currentUserAnswer);
+};
+
+const checkUserAnswer = (correctAnswer) => {
+    const correctButton = document.getElementById(correctAnswer);
+    const userButton = document.getElementById(currentUserAnswer);
+    const correctImg = document.createElement("img");
+    const incorrectImg = document.createElement("img");
+    correctImg.setAttribute("src", "/assets/images/icon-correct.svg");
+    incorrectImg.setAttribute("src", "/assets/images/icon-incorrect.svg");
+    if (correctAnswer === currentUserAnswer) {
+        userButton.classList.remove("selected");
+        userButton.classList.remove("incorrect");
+        userButton.classList.add("correct");
+
+        userButton.appendChild(correctImg);
+        numberOfCorrect++;
+    } else {
+        userButton.classList.remove("selected");
+        userButton.classList.remove("correct");
+        userButton.classList.add("incorrect");
+
+        correctButton.classList.add("correct");
+
+        correctButton.appendChild(correctImg);
+        userButton.appendChild(incorrectImg);
+    }
+    submitButton.remove();
+    nextButton.className = "submit__button";
+    nextButton.innerText = "Next Question";
+    quizQuestionsContainer.appendChild(nextButton);
 };
 
 const quizHeader = (icon, title) => {
@@ -79,12 +119,13 @@ const quizTitle = (question, questionNumber, total) => {
     progressBar.style.width = `${progress}%`;
 };
 
-const quizSubmitButton = () => {
+const quizSubmitButton = (answer) => {
     submitButton.className = "submit__button";
     submitButton.innerText = "Submit Answer";
     submitButton.setAttribute("id", "submit-button");
     submitButton.setAttribute("disabled", true);
 
+    submitButton.addEventListener("click", () => checkUserAnswer(answer));
     quizQuestionsContainer.appendChild(submitButton);
 };
 
@@ -114,17 +155,27 @@ const quizQuestions = (options) => {
     });
 };
 
-const quizContent = (questions) => {
-    const { question, options, answer } = questions[currentQuestionIdx];
-    const totalQuestions = questions.length;
+const quizContent = () => {
+    const { question, options, answer } = allQuestions[currentQuestionIdx];
+    const totalQuestions = allQuestions.length;
+    removePreviousContent();
+    nextButton.remove();
     quizTitle(question, currentQuestionIdx, totalQuestions);
     quizQuestions(options);
-    quizSubmitButton();
+    quizSubmitButton(answer);
 };
 
+nextButton.addEventListener("click", () => {
+    currentQuestionIdx++;
+    currentUserAnswer = "";
+    console.log(currentUserAnswer);
+    quizContent();
+});
+
 const showQuiz = (quizObj) => {
+    allQuestions = [...quizObj.questions];
     quizHeader(quizObj.icon, quizObj.title);
-    quizContent(quizObj.questions);
+    quizContent(allQuestions);
 };
 
 export default showQuiz;
