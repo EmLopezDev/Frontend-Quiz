@@ -2,7 +2,33 @@ const quizHeaderEl = document.getElementsByTagName("header")[0];
 const quizTitleEL = document.getElementById("quiz-title");
 const quizContentEl = document.getElementById("quiz-content");
 
+const quizQuestionsContainer = document.createElement("div");
+const quizQuestionsAnswers = document.createElement("div");
+
+const submitButton = document.createElement("button");
+
 const optionLetters = ["A", "B", "C", "D"];
+
+let currentQuestionIdx = 0;
+let currentUserAnswer = "";
+
+const selectedAnswer = (selected) => {
+    const answerButtons = document.querySelectorAll(".answer-buttons");
+
+    answerButtons.forEach((button) => {
+        if (button.id === selected) {
+            button.classList.add("selected");
+        } else {
+            button.classList.remove("selected");
+        }
+    });
+};
+
+const setUserAnswer = (evt) => {
+    currentUserAnswer = evt.currentTarget.value;
+    submitButton.removeAttribute("disabled");
+    selectedAnswer(currentUserAnswer);
+};
 
 const quizHeader = (icon, title) => {
     const div = document.createElement("div");
@@ -53,10 +79,16 @@ const quizTitle = (question, questionNumber, total) => {
     progressBar.style.width = `${progress}%`;
 };
 
-const quizQuestions = (options) => {
-    const quizQuestionsContainer = document.createElement("div");
-    const quizQuestionsAnswers = document.createElement("div");
+const quizSubmitButton = () => {
+    submitButton.className = "submit__button";
+    submitButton.innerText = "Submit Answer";
+    submitButton.setAttribute("id", "submit-button");
+    submitButton.setAttribute("disabled", true);
 
+    quizQuestionsContainer.appendChild(submitButton);
+};
+
+const quizQuestions = (options) => {
     quizQuestionsContainer.className = "question__view--content";
     quizQuestionsAnswers.className = "question__view--content-answers";
 
@@ -73,41 +105,21 @@ const quizQuestions = (options) => {
 
         button.className = "answer-buttons";
         button.innerText = `${option}`;
+        button.setAttribute("id", option);
+        button.setAttribute("value", option);
+        button.addEventListener("click", setUserAnswer);
 
         button.prepend(span);
         quizQuestionsAnswers.appendChild(button);
     });
-
-    // quizContentEl.innerHTML = `
-    //     <div class="question__view--content">
-    //         <button
-    //             id="submit-button"
-    //             class="submit__button"
-    //             disabled
-    //         >
-    //             Submit Answer
-    //         </button>
-    //         <span
-    //             id="error-message"
-    //             class="error__message hidden"
-    //         >
-    //             <img
-    //                 src="assets/images/icon-error.svg"
-    //                 alt=""
-    //             />
-    //             Please select an answer
-    //         </span>
-    //     </div>
-    // `;
 };
 
 const quizContent = (questions) => {
-    const currentQuestionIdx = 1;
-    const currentQuestion = questions[currentQuestionIdx].question;
-    const currentQuestionOptions = questions[currentQuestionIdx].options;
+    const { question, options, answer } = questions[currentQuestionIdx];
     const totalQuestions = questions.length;
-    quizTitle(currentQuestion, currentQuestionIdx, totalQuestions);
-    quizQuestions(currentQuestionOptions);
+    quizTitle(question, currentQuestionIdx, totalQuestions);
+    quizQuestions(options);
+    quizSubmitButton();
 };
 
 const showQuiz = (quizObj) => {
@@ -116,3 +128,18 @@ const showQuiz = (quizObj) => {
 };
 
 export default showQuiz;
+
+// quizContentEl.innerHTML = `
+//     <div class="question__view--content">
+//         <span
+//             id="error-message"
+//             class="error__message hidden"
+//         >
+//             <img
+//                 src="assets/images/icon-error.svg"
+//                 alt=""
+//             />
+//             Please select an answer
+//         </span>
+//     </div>
+// `;

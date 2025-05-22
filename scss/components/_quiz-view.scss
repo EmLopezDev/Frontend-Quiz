@@ -69,7 +69,7 @@
             @include u.text-preset-4;
         }
 
-        & .selected {
+        & button.selected {
             border: u.rem(3) solid var(--color-purple-600);
 
             & .answer__letter {
