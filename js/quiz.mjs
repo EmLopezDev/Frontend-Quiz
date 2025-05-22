@@ -45,8 +45,8 @@ const checkUserAnswer = (correctAnswer) => {
     const userButton = document.getElementById(currentUserAnswer);
     const correctImg = document.createElement("img");
     const incorrectImg = document.createElement("img");
-    correctImg.setAttribute("src", "/assets/images/icon-correct.svg");
-    incorrectImg.setAttribute("src", "/assets/images/icon-incorrect.svg");
+    correctImg.setAttribute("src", "assets/images/icon-correct.svg");
+    incorrectImg.setAttribute("src", "assets/images/icon-incorrect.svg");
     if (correctAnswer === currentUserAnswer) {
         userButton.classList.remove("selected");
         userButton.classList.remove("incorrect");
@@ -77,8 +77,8 @@ const quizHeader = (icon, title) => {
     const h1 = document.createElement("h1");
 
     h1.innerText = `${title}`;
-
-    img.setAttribute("src", `.${icon}`);
+    console.log(icon);
+    img.setAttribute("src", `${icon}`);
     img.setAttribute("alt", "");
 
     span.className = `icon__bg ${title.toLowerCase()}__bg`;
@@ -100,7 +100,7 @@ const quizTitle = (question, questionNumber, total) => {
     const progressBarContainer = document.createElement("div");
     const progressBar = document.createElement("div");
 
-    questionTitleSpan.innerText = `Question ${questionNumber} of ${total}`;
+    questionTitleSpan.innerText = `Question ${questionNumber + 1} of ${total}`;
     questionTitleH2.innerText = `${question}`;
     progressBar.setAttribute("id", "progress-bar");
     progressBar.className = "question__view--title-progress-bar";
