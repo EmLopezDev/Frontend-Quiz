@@ -96,8 +96,7 @@ button.submit__button {
     color: var(--color-white);
     background-color: var(--color-purple-600);
 
-    &:disabled {
-        cursor: not-allowed;
+    &.disabled {
         opacity: 50%;
     }
 }
@@ -130,7 +129,7 @@ span.icon__bg {
         background-color: var(--color-green-100);
     }
 
-    &.js__bg {
+    &.javascript__bg {
         background-color: var(--color-blue-50);
     }
 

@@ -41,7 +41,7 @@
             color: var(--text-color-primary);
             margin-bottom: u.rem(16);
 
-            @include u.text-preset-4;
+            @include u.text-preset-3;
 
             @include u.breakpoint(small) {
                 margin-bottom: u.rem(40);

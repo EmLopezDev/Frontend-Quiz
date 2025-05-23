@@ -1,9 +1,9 @@
 import setTheme from "./theme.mjs";
 import showQuiz from "./quiz.mjs";
 
-const startViewTitleDiv =
+export const startViewTitleDiv =
     document.getElementsByClassName("start__view--title")[0];
-const startViewContentDiv = document.getElementsByClassName(
+export const startViewContentDiv = document.getElementsByClassName(
     "start__view--content"
 )[0];
 

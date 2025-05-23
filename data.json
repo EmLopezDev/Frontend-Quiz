@@ -2,7 +2,7 @@
     "quizzes": [
         {
             "title": "HTML",
-            "icon": "assets/images/icon-html.svg",
+            "icon": "./assets/images/icon-html.svg",
             "questions": [
                 {
                     "question": "What does HTML stand for?",
