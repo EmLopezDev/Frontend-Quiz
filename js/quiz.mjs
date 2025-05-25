@@ -25,20 +25,10 @@ let currentUserAnswer = "";
 
 let numberOfCorrect = 0;
 
-export const removeQuizTitle = () => {
-    if (quizTitleEL && quizTitleEL.children.length > 1) {
-        // Iterate through the children starting from the last one
-        for (let i = quizTitleEL.children.length - 1; i > 0; i--) {
-            quizTitleEL.removeChild(quizTitleEL.children[i]);
-        }
-    }
-};
-
-export const removeQuizContent = () => {
-    if (quizContentEl && quizContentEl.children.length > 1) {
-        // Iterate through the children starting from the last one
-        for (let i = quizContentEl.children.length - 1; i > 0; i--) {
-            quizContentEl.removeChild(quizContentEl.children[i]);
+export const removeElements = (parent) => {
+    if (parent && parent.children.length > 1) {
+        for (let i = parent.children.length - 1; i > 0; i--) {
+            parent.removeChild(parent.children[i]);
         }
     }
 };
@@ -105,8 +95,8 @@ const quizHeader = (icon, title) => {
     const img = document.createElement("img");
     const h1 = document.createElement("h1");
 
-    h1.innerText = `${title}`;
-    img.setAttribute("src", `${icon}`);
+    h1.innerText = title;
+    img.setAttribute("src", icon);
     img.setAttribute("alt", "");
 
     span.className = `icon__bg ${title.toLowerCase()}__bg`;
@@ -129,7 +119,7 @@ const quizTitle = (question, questionNumber, total) => {
     const progressBar = document.createElement("div");
 
     questionTitleSpan.innerText = `Question ${questionNumber + 1} of ${total}`;
-    questionTitleH2.innerText = `${question}`;
+    questionTitleH2.innerText = question;
     progressBar.setAttribute("id", "progress-bar");
     progressBar.className = "question__view--title-progress-bar";
     progressBarContainer.className = "question__view--title-progress-container";
@@ -196,7 +186,7 @@ const quizQuestions = (options) => {
         span.innerText = `${optionLetters[idx]}`;
 
         button.className = "answer-buttons";
-        button.innerText = `${option}`;
+        button.innerText = option;
         button.setAttribute("id", option);
         button.setAttribute("value", option);
         button.addEventListener("click", setUserAnswer);
@@ -209,8 +199,8 @@ const quizQuestions = (options) => {
 const quizContent = () => {
     const { question, options, answer } = allQuestions[currentQuestionIdx];
     const totalQuestions = allQuestions.length;
-    removeQuizTitle();
-    removeQuizContent();
+    removeElements(quizTitleEL);
+    removeElements(quizContentEl);
     nextButton.remove();
     quizTitle(question, currentQuestionIdx, totalQuestions);
     quizQuestions(options);
@@ -224,8 +214,8 @@ nextButton.addEventListener("click", () => {
 });
 
 resultsButton.addEventListener("click", () => {
-    removeQuizTitle();
-    removeQuizContent();
+    removeElements(quizTitleEL);
+    removeElements(quizContentEl);
     quizQuestionsAnswers.innerHTML = "";
     resultsButton.remove();
     showResults(quizObject, numberOfCorrect);

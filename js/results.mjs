@@ -1,10 +1,5 @@
-import {
-    removeQuizContent,
-    removeQuizTitle,
-    quizTitleEL,
-    quizContentEl,
-} from "./quiz.mjs";
-import { startViewTitleDiv, startViewContentDiv } from "./main.mjs";
+import { removeElements, quizTitleEL, quizContentEl } from "./quiz.mjs";
+import { showHideStartView } from "./main.mjs";
 
 const resultsTitle = () => {
     const div = document.createElement("div");
@@ -24,10 +19,9 @@ const resultsTitle = () => {
 const playAgain = () => {
     const headerTitle = document.getElementById("header-title");
     headerTitle.remove();
-    removeQuizTitle();
-    removeQuizContent();
-    startViewTitleDiv.classList.remove("hidden");
-    startViewContentDiv.classList.remove("hidden");
+    removeElements(quizTitleEL);
+    removeElements(quizContentEl);
+    showHideStartView(false);
 };
 
 const resultsContent = (quiz, correctNumber) => {

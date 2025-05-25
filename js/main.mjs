@@ -9,7 +9,7 @@ export const startViewContentDiv = document.getElementsByClassName(
 
 const allButtons = document.querySelectorAll(".quiz-button");
 
-const showHideStartView = (boolean) => {
+export const showHideStartView = (boolean) => {
     if (boolean) {
         startViewTitleDiv.classList.add("hidden");
         startViewContentDiv.classList.add("hidden");
