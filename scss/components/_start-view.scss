@@ -9,7 +9,7 @@
         gap: u.rem(48);
     }
 
-    & h2 {
+    & h1 {
         color: var(--text-color-primary);
 
         @include u.text-preset-2-light;
