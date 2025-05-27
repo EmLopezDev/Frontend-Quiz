@@ -30,6 +30,7 @@ body {
         padding: 0 u.rem(32);
     }
 }
+
 section {
     width: 100%;
 }
@@ -48,8 +49,7 @@ main {
 
     @include u.breakpoint(medium) {
         flex-direction: row;
-        gap: u.rem(100);
-        max-width: u.rem(1100);
+        max-width: u.rem(1200);
     }
 }
 
@@ -59,6 +59,7 @@ button {
     text-align: left;
     gap: u.rem(16);
     padding: u.rem(16);
+    width: 100%;
     height: clamp(4.5rem, 3rem + 4vw, 5.5rem);
     background-color: var(--base-secondary-bg-color);
     border: none;
@@ -66,6 +67,7 @@ button {
     color: var(--text-color-primary);
     box-shadow: 0 u.rem(16) u.rem(40) 0 var(--box-shadow-color);
     cursor: pointer;
+    border: u.rem(3) solid transparent;
 
     @include u.text-preset-4;
 
