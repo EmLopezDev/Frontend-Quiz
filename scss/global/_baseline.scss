@@ -89,6 +89,10 @@ button {
     }
 }
 
+button.answer-buttons:disabled {
+    pointer-events: none;
+}
+
 button.submit__button {
     display: flex;
     justify-content: center;

@@ -35,7 +35,6 @@ export const removeElements = (parent) => {
 
 const selectedAnswer = (selected) => {
     const answerButtons = document.querySelectorAll(".answer-buttons");
-
     answerButtons.forEach((button) => {
         button.classList.remove("correct");
         button.classList.remove("incorrect");
@@ -59,6 +58,7 @@ const checkUserAnswer = (evt) => {
     const submitValue = evt.currentTarget.value;
     const correctButton = document.getElementById(submitValue);
     const userButton = document.getElementById(currentUserAnswer);
+    const answerButtons = document.querySelectorAll(".answer-buttons");
     correctImg.setAttribute("src", "assets/images/icon-correct.svg");
     incorrectImg.setAttribute("src", "assets/images/icon-incorrect.svg");
 
@@ -77,6 +77,16 @@ const checkUserAnswer = (evt) => {
         correctButton.appendChild(correctImg);
         userButton.appendChild(incorrectImg);
     }
+
+    answerButtons.forEach((button) => {
+        button.setAttribute("disabled", true);
+        if (
+            !button.classList.contains("incorrect") &&
+            !button.classList.contains("correct")
+        ) {
+            button.style.opacity = "50%";
+        }
+    });
 
     if (currentQuestionIdx + 1 < allQuestions.length) {
         nextButton.className = "submit__button";
