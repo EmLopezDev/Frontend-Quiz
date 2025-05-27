@@ -21,7 +21,7 @@
         }
     }
 
-    & p {
+    & h3 {
         color: var(--text-color-secondary);
 
         @include u.text-preset-5;
